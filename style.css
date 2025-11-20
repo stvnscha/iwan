@@ -299,7 +299,7 @@ header img{
     .hero h1{ font-size:22px; }
     .teacher-text{ font-size:16px; }
     #wrapper{ height:300px; max-width:360px; margin-top:8px; }
-    #center-logo{ width:70px; top:70%; }
+    #center-logo{ width:70px; top:75%; }
     .modal{ padding:14px; border-radius:10px; }
     .modal .modal-header img{ width:40px; }
     .btn{ font-size:15px; padding:10px; }
@@ -401,6 +401,7 @@ header img{
     padding-top: 10px;  /* ruang aman agar wrapper tidak menyentuh header */
     position: relative;
 }
+
 
 
 
