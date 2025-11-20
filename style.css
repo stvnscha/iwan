@@ -74,7 +74,7 @@ header img{
 
 /* Logo Tengah Bergerak */
 #center-logo{
-    width:150px;
+    width:100px;
     position:absolute;
     left:50%;
     top:70%;
@@ -401,3 +401,4 @@ header img{
     padding-top: -5px;  /* ruang aman agar wrapper tidak menyentuh header */
     position: relative;
 }
+
