@@ -372,9 +372,5 @@ header img{
     pointer-events: none;
 }
 
-.page-container {
-    padding-top: 130px;  /* ruang aman agar wrapper tidak menyentuh header */
-    position: relative;
 
-}
 
