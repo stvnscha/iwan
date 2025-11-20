@@ -1,0 +1,408 @@
+:root{
+    --bg:#0f0f2d;
+    --accent:#3b82f6;
+    --card:#ffffff;
+    --card-border:#e5e7eb;
+    --muted:#666;
+}
+
+html,body{
+ margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    overflow-x: hidden; /* BIARKAN bisa scroll vertical */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg) url('https://osmosis.zone/assets/grids/2xl/grid-1.svg') center/cover no-repeat fixed;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    padding-bottom:40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header{
+    width:100%;
+    padding:14px 12px;
+	margin-bottom: 30px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:center;
+    background: rgba(0,0,0,0.28);
+    position:relative;
+}
+header img{
+    width:42px;
+    height:auto;
+    display:block;
+}
+.title{
+    font-weight:700;
+    font-size:22px;
+}
+
+/* WRAPPER / ORBIT */
+#wrapper {
+    margin-top: 100px;  /* Memberikan jarak antara header dan wrapper */
+    align-self: center;
+    position: relative !important;
+    left: 0 !important;
+}
+#icons{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+/* Ikon Lingkaran NON-ANIMASI */
+#icons img{
+    position:absolute;
+    transform: translate(-50%, -50%);
+    pointer-events:auto;
+	    margin-top: 0;  /* Sesuaikan posisi ikon supaya lebih rata */
+    top: 50%;  /* Set posisi vertikal di tengah */
+    left: 50%;  /* Set posisi horizontal di tengah */
+}
+
+/* Logo Tengah Bergerak */
+#center-logo{
+    width: 100px; /* Ukuran logo */
+    position: absolute;
+    left: 50%;
+    top: 50%; /* Pastikan logo tepat di tengah secara vertikal */
+    transform: translate(-50%, -50%); /* Posisikan tepat di tengah */
+    z-index: 1000;
+    filter: drop-shadow(0 0 22px #b144ff); /* Efek cahaya */
+    pointer-events: auto;
+    animation: float 2.2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) translateY(-6px); }
+    50% { transform: translate(-50%, -50%) translateY(6px); }
+    100% { transform: translate(-50%, -50%) translateY(-6px); }
+}
+
+/* HERO */
+.hero{
+    padding-top: 55px; /* supaya turun dan tidak menempel header */
+
+}
+.hero h1{
+    font-size:38px;
+    margin:8px 0 6px;
+    line-height:1.05;
+}
+.hero p{
+    margin:0 0 6px;
+    font-size:18px;
+    opacity:.9;
+}
+.teacher-text{
+    margin-top:20px;
+    font-weight:700;
+    font-size:20px;
+    color:#fff;
+}
+
+/* BUTTON */
+.absen-btn{
+     margin-top: 10px;
+    padding: 12px; /* Padding yang cukup agar teks tetap nyaman */
+    font-size: 17px;
+    border-radius: 10px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;  /* Tombol akan mengisi lebar kontainer */
+    box-sizing: border-box;  /* Agar padding dihitung dalam lebar tombol */
+    text-align: center;  /* Agar teks tetap terpusat di dalam tombol */
+}
+.absen-btn:active{
+    transform:translateY(1px);
+}
+
+/* POPUPS */
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background: rgba(0,0,0,0.5);
+    z-index:2000;
+    padding:18px;
+}
+.modal{
+    width:100%;
+    max-width:520px;
+    background:var(--card);
+    color:#111;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 12px 40px rgba(0,0,0,0.25);
+    border:1px solid var(--card-border);
+    position:relative;
+    text-align:left;
+}
+.modal .modal-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+}
+.modal .modal-header img{
+    width:48px;
+    height:auto;
+}
+.modal h3{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:#111;
+}
+.divider{
+    height:1px;
+    background:var(--card-border);
+    margin:12px 0;
+    border-radius:2px;
+}
+
+.class-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:6px;
+}
+.class-item{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    background:#fafafa;
+    border-radius:10px;
+    padding:10px;
+    border:1px solid var(--card-border);
+    cursor:pointer;
+}
+.class-item img{
+    width:48px;
+    height:48px;
+    border-radius:8px;
+    object-fit:cover;
+    border:1px solid #ddd;
+}
+.class-item small{
+    color:var(--muted);
+    display:block;
+    font-size:13px;
+}
+
+.full-input label{
+    display:block;
+    margin-bottom:8px;
+    color:#111;
+    font-weight:600;
+}
+.full-input input[type="text"]{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #d1d5db;
+    box-sizing:border-box;
+    font-size:16px;
+}
+
+.btn{
+    display:inline-block;
+    width:100%;
+    padding:11px 14px;
+    border-radius:10px;
+    border:0;
+    background:var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.loading-bar{
+    width:100%;
+    height:20px;
+    background:#e5e7eb;
+    border-radius:12px;
+    overflow:hidden;
+}
+.loading-fill{
+    width:0%;
+    height:100%;
+    background:var(--accent);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:700;
+    transition: width .2s linear;
+}
+
+.close-btn{
+    position:absolute;
+    right:10px;
+    top:8px;
+    background:transparent;
+    border:0;
+    font-size:22px;
+    cursor:pointer;
+    color:#444;
+}
+
+#connect-to-wallet {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center; /* Optional, for centering the text */
+    animation: dot-blink 1.5s steps(5, end) infinite;
+}
+
+@keyframes dot-blink {
+    0% { content: "Connect to Wallet..."; }
+    25% { content: "Connect to Wallet.";}
+    50% { content: "Connect to Wallet..";}
+    75% { content: "Connect to Wallet...";}
+}
+
+.wallet-italic {
+    font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px){
+    .hero h1{ font-size:32px; }
+    #wrapper{ height:420px; }
+    #center-logo{         width: 80px; /* Ukuran logo sedikit lebih kecil */
+        top: 55%;  /* Posisi logo yang lebih pas di layar kecil */ }
+}
+@media (max-width: 768px){
+    .hero h1{ font-size:28px; }
+    .hero p{ font-size:15px; }
+    #wrapper{ height:360px; }
+    #icons img{ will-change:transform,left,top; }
+}
+@media (max-width: 520px){
+    body{ padding:0 8px 30px; }
+    header .title{ font-size:18px; }
+    header img{ width:36px; }
+    .hero h1{ font-size:22px; }
+    .teacher-text{ font-size:16px; }
+    #wrapper{ height:300px; max-width:360px; margin-top:8px; }
+    #center-logo{ width: 60px; /* Ukuran logo semakin kecil */
+        top: 60%;  /* Posisi logo sedikit lebih ke bawah di layar kecil */ }
+    .modal{ padding:14px; border-radius:10px; }
+    .modal .modal-header img{ width:40px; }
+    .btn{ font-size:15px; padding:10px; }
+}
+@media (max-width: 380px){
+    #wrapper{ height:260px; max-width:320px; }
+    #center-logo{ width:52px; top:87%; }
+    .hero h1{ font-size:20px; }
+}
+
+/* FIX AREA INPUT POPUP 2 */
+#modal-p2 textarea{
+    width: 100%;
+    height: 110px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    resize: none;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+
+/* Placeholder tetap di atas */
+#modal-p2 textarea::placeholder{
+    opacity: 0.7;
+}
+/* === Kotak melengkung untuk teks claim === */
+/* === Kotak Gradient Osmosis === */
+.text-box {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: clamp(14px, 4vw, 28px);
+    border-radius: 22px;
+
+    /* Gradient */
+    background: linear-gradient(
+        135deg,
+        #241263 0%,
+        #5a1fcf 35%,
+        #9234ff 60%,
+        #ff7a3d 100%
+    );
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(
+            135deg,
+            #241263 0%,
+            #5a1fcf 35%,
+            #9234ff 60%,
+            #ff7a3d 100%
+        );
+    background-size: 40px 40px, 40px 40px, cover;
+
+    /* AUTO SHRINK TEXT */
+    font-size: clamp(12px, 1.6vw, 17px);
+    line-height: clamp(1.2, 1.5vw, 1.55);
+    color: #fff;
+    text-align: center;
+
+    /* Glow */
+    box-shadow: 0 0 25px rgba(150, 40, 255, 0.3);
+
+    /* Tidak scroll, tidak overflow */
+    overflow: visible;
+    position: relative;
+}
+
+/* Glossy overlay tetap */
+.text-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+/* Highlight gloss */
+.text-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+.page-container {
+    padding-top: 330px;  /* ruang aman agar wrapper tidak menyentuh header */
+    position: relative;
+}
