@@ -27,15 +27,15 @@ const ring3 = [
   "https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons/svg/color/btc.svg",
   "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axl.svg",
   "https://cryptologos.cc/logos/fantom-ftm-logo.svg?v=030",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/kava.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/saga/images/saga_white.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/kava/images/kava.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/saga/images/saga_white.svg",
   "https://osmosis.zone/assets/icons/cro.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/evmos/images/evmos.svg",
   "https://osmosis.zone/assets/icons/stars.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/filecoin/images/fil.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/luna.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/images/bld.svg",
-  "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/ntrn.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/_non-cosmos/filecoin/images/fil.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/terra/images/luna.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/agoric/images/bld.svg",
+  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/neutron/images/ntrn.svg",
   "https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons/svg/color/btc.svg"
 ];
 
@@ -237,4 +237,5 @@ let dots = 0;
 setInterval(() => {
   dots = (dots + 1) % 4;
   walletText.textContent = `Connect to Wallet${'.'.repeat(dots)}`;
+
 }, 500);
