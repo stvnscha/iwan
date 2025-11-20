@@ -49,10 +49,12 @@ header img{
 
 /* WRAPPER / ORBIT */
 #wrapper {
-    margin-top: 28px;  /* <<<<<< DIBUAT WAJAR (perbaikan jarak ikon dari header) */
-    align-self: center;
-    position: relative !important;
-    left: 0 !important;
+ position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin: 18px auto 6px;
+    pointer-events: none;
 }
 #icons{
     position:absolute;
@@ -65,21 +67,21 @@ header img{
     position:absolute;
     transform: translate(-50%, -50%);
     pointer-events:auto;
-    margin-top: 0;
-    top: 50%;
-    left: 50%;
+	    margin-top: 0;  /* Sesuaikan posisi ikon supaya lebih rata */
+    top: 50%;  /* Set posisi vertikal di tengah */
+    left: 50%;  /* Set posisi horizontal di tengah */
 }
 
 /* Logo Tengah Bergerak */
 #center-logo{
-    width: 100px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+    width:150px;
+    position:absolute;
+    left:50%;
+    top:70%;
+    transform: translate(-50%,-50%);
+    z-index:1000;
     filter: drop-shadow(0 0 22px #b144ff);
-    pointer-events: auto;
+    pointer-events:auto;
     animation: float 2.2s ease-in-out infinite;
 }
 
@@ -91,7 +93,8 @@ header img{
 
 /* HERO */
 .hero{
-    padding-top: 55px;
+    padding-top: 0px; /* supaya turun dan tidak menempel header */
+
 }
 .hero h1{
     font-size:38px;
@@ -103,17 +106,11 @@ header img{
     font-size:18px;
     opacity:.9;
 }
-.teacher-text{
-    margin-top:20px;
-    font-weight:700;
-    font-size:20px;
-    color:#fff;
-}
 
 /* BUTTON */
 .absen-btn{
      margin-top: 10px;
-    padding: 12px;
+    padding: 12px; /* Padding yang cukup agar teks tetap nyaman */
     font-size: 17px;
     border-radius: 10px;
     border: 0;
@@ -121,9 +118,9 @@ header img{
     color: #fff;
     cursor: pointer;
     font-weight: 700;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
+    width: 100%;  /* Tombol akan mengisi lebar kontainer */
+    box-sizing: border-box;  /* Agar padding dihitung dalam lebar tombol */
+    text-align: center;  /* Agar teks tetap terpusat di dalam tombol */
 }
 .absen-btn:active{
     transform:translateY(1px);
@@ -268,7 +265,7 @@ header img{
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    text-align: center;
+    text-align: center; /* Optional, for centering the text */
     animation: dot-blink 1.5s steps(5, end) infinite;
 }
 
@@ -287,7 +284,8 @@ header img{
 @media (max-width: 992px){
     .hero h1{ font-size:32px; }
     #wrapper{ height:420px; }
-    #center-logo{ width: 80px; top: 55%; }
+    #center-logo{         width: 80px; /* Ukuran logo sedikit lebih kecil */
+        top: 55%;  /* Posisi logo yang lebih pas di layar kecil */ }
 }
 @media (max-width: 768px){
     .hero h1{ font-size:28px; }
@@ -302,7 +300,8 @@ header img{
     .hero h1{ font-size:22px; }
     .teacher-text{ font-size:16px; }
     #wrapper{ height:300px; max-width:360px; margin-top:8px; }
-    #center-logo{ width: 60px; top: 60%; }
+    #center-logo{ width: 60px; /* Ukuran logo semakin kecil */
+        top: 60%;  /* Posisi logo sedikit lebih ke bawah di layar kecil */ }
     .modal{ padding:14px; border-radius:10px; }
     .modal .modal-header img{ width:40px; }
     .btn{ font-size:15px; padding:10px; }
@@ -325,10 +324,12 @@ header img{
     box-sizing: border-box;
     line-height: 20px;
 }
+
+/* Placeholder tetap di atas */
 #modal-p2 textarea::placeholder{
     opacity: 0.7;
 }
-
+/* === Kotak melengkung untuk teks claim === */
 /* === Kotak Gradient Osmosis === */
 .text-box {
     max-width: 800px;
@@ -336,30 +337,68 @@ header img{
     margin: 20px auto;
     padding: clamp(14px, 4vw, 28px);
     border-radius: 22px;
-    background: linear-gradient(135deg,#241263 0%,#5a1fcf 35%,#9234ff 60%,#ff7a3d 100%);
+
+    /* Gradient */
+    background: linear-gradient(
+        135deg,
+        #241263 0%,
+        #5a1fcf 35%,
+        #9234ff 60%,
+        #ff7a3d 100%
+    );
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(135deg,#241263 0%,#5a1fcf 35%,#9234ff 60%,#ff7a3d 100%);
+        linear-gradient(
+            135deg,
+            #241263 0%,
+            #5a1fcf 35%,
+            #9234ff 60%,
+            #ff7a3d 100%
+        );
     background-size: 40px 40px, 40px 40px, cover;
+
+    /* AUTO SHRINK TEXT */
     font-size: clamp(12px, 1.6vw, 17px);
     line-height: clamp(1.2, 1.5vw, 1.55);
     color: #fff;
     text-align: center;
+
+    /* Glow */
     box-shadow: 0 0 25px rgba(150, 40, 255, 0.3);
+
+    /* Tidak scroll, tidak overflow */
     overflow: visible;
     position: relative;
 }
 
+/* Glossy overlay tetap */
 .text-box::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 60%);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+/* Highlight gloss */
+.text-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    );
     pointer-events: none;
 }
 
 .page-container {
-    padding-top: 330px;
+    padding-top: -5px;  /* ruang aman agar wrapper tidak menyentuh header */
     position: relative;
 }
