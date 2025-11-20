@@ -373,7 +373,8 @@ header img{
 }
 
 .page-container {
-    padding-top: 330px;  /* ruang aman agar wrapper tidak menyentuh header */
+    padding-top: 130px;  /* ruang aman agar wrapper tidak menyentuh header */
     position: relative;
 
 }
+
