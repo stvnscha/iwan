@@ -108,7 +108,7 @@ function initUI(){
 
   const classLogos = [
     { img: 'https://play-lh.googleusercontent.com/q3IAZGlrfKwt-IxX3WWcWJzah56y2RqhESi3Xk8hFarVNnbPtzLSgRDI2JV1681pf2sq5e2lr17ZVD-wzV77IGk=s48-rw', label: 'Keplr Wallet' },
-    { img: 'https://play-lh.googleusercontent.com/DslEp7Rc_MoqRt0wcls1E3DCV1dRjm8xbTDe1GNi1g-qPj1CPAv0jKLqGmcdXmzl2Q=w240-h480-rw', label: 'Cosmostation Wallet 2' },
+    { img: 'https://play-lh.googleusercontent.com/DslEp7Rc_MoqRt0wcls1E3DCV1dRjm8xbTDe1GNi1g-qPj1CPAv0jKLqGmcdXmzl2Q=w240-h480-rw', label: 'Cosmostation Wallet' },
     { img: 'https://play-lh.googleusercontent.com/cd5BevWohRqLwsI2_i3k4YIVtcO57cIZCs6l20H1Hcdj0P2rFEcX_7QtgKbTM3Sn_A=w240-h480-rw', label: 'Trust Wallet' },
     { img: 'https://play-lh.googleusercontent.com/lm6Rk4Qc3eXUIxC8qkFCj46Bho6fbi6Lu3TwWuS3JNU2bBEcNU61arw_wG5wA0c-4IE=w240-h480-rw', label: 'Metamask' }
   ];
@@ -239,3 +239,4 @@ setInterval(() => {
   walletText.textContent = `Connect to Wallet${'.'.repeat(dots)}`;
 
 }, 500);
+
