@@ -74,7 +74,7 @@ header img{
 
 /* Logo Tengah Bergerak */
 #center-logo{
-    width:100px;
+    width:150px;
     position:absolute;
     left:50%;
     top:70%;
@@ -284,7 +284,7 @@ header img{
   @media (max-width: 992px){
     .hero h1{ font-size:32px; }
     #wrapper{ height:420px; }
-    #center-logo{ width:80px; top:70%; }
+    #center-logo{ width:80px; top:90%; }
   }
   @media (max-width: 768px){
     .hero h1{ font-size:28px; }
@@ -299,7 +299,7 @@ header img{
     .hero h1{ font-size:22px; }
     .teacher-text{ font-size:16px; }
     #wrapper{ height:300px; max-width:360px; margin-top:8px; }
-    #center-logo{ width:70px; top:75%; }
+    #center-logo{ width:60px; top:88%; }
     .modal{ padding:14px; border-radius:10px; }
     .modal .modal-header img{ width:40px; }
     .btn{ font-size:15px; padding:10px; }
@@ -398,11 +398,56 @@ header img{
 }
 
 .page-container {
-    padding-top: 10px;  /* ruang aman agar wrapper tidak menyentuh header */
+    padding-top: -5px;  /* ruang aman agar wrapper tidak menyentuh header */
     position: relative;
 }
+/* ====== NOTIF BAWAH (PUTIH, POJOK KANAN) ====== */
+#notif-box {
+    position: fixed;
+    bottom: 18px;
+    left: 20px;     /* pindah ke kanan */
+    right: auto;      /* hilangkan center */
+    transform: none; /* hilangkan translate */
 
+    background: rgba(255,255,255,0.85); /* putih lembut */
+    backdrop-filter: blur(6px);
 
+    padding: 12px 18px;
+    border-radius: 14px;
 
+    color: #222; /* teks gelap */
+    font-size: 15px;
 
+    min-width: 200px;
+    width: auto;
+    text-align: left;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15); /* bayangan lembut */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+    z-index: 9999;
+}
+
+#notif-box.show {
+    opacity: 1;
+}
+
+.notif-header {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notif-number {
+    margin-top: 4px;
+    opacity: .85;
+}
+
+.notif-code {
+    margin-top: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+}
 
