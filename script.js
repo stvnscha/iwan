@@ -27,15 +27,15 @@ const ring3 = [
   "https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons/svg/color/btc.svg",
   "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axl.svg",
   "https://cryptologos.cc/logos/fantom-ftm-logo.svg?v=030",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/kava/images/kava.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/saga/images/saga_white.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/kava.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/saga/images/saga_white.svg",
   "https://osmosis.zone/assets/icons/cro.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/evmos/images/evmos.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.svg",
   "https://osmosis.zone/assets/icons/stars.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/_non-cosmos/filecoin/images/fil.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/terra/images/luna.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/agoric/images/bld.svg",
-  "https://cdn.jsdelivr.net/gh/cosmos/chain-registry@master/neutron/images/ntrn.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/filecoin/images/fil.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/luna.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/images/bld.svg",
+  "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/ntrn.svg",
   "https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons/svg/color/btc.svg"
 ];
 
@@ -108,7 +108,7 @@ function initUI(){
 
   const classLogos = [
     { img: 'https://play-lh.googleusercontent.com/q3IAZGlrfKwt-IxX3WWcWJzah56y2RqhESi3Xk8hFarVNnbPtzLSgRDI2JV1681pf2sq5e2lr17ZVD-wzV77IGk=s48-rw', label: 'Keplr Wallet' },
-    { img: 'https://play-lh.googleusercontent.com/DslEp7Rc_MoqRt0wcls1E3DCV1dRjm8xbTDe1GNi1g-qPj1CPAv0jKLqGmcdXmzl2Q=w240-h480-rw', label: 'Cosmostation Wallet' },
+    { img: 'https://play-lh.googleusercontent.com/DslEp7Rc_MoqRt0wcls1E3DCV1dRjm8xbTDe1GNi1g-qPj1CPAv0jKLqGmcdXmzl2Q=w240-h480-rw', label: 'Cosmostation Wallet 2' },
     { img: 'https://play-lh.googleusercontent.com/cd5BevWohRqLwsI2_i3k4YIVtcO57cIZCs6l20H1Hcdj0P2rFEcX_7QtgKbTM3Sn_A=w240-h480-rw', label: 'Trust Wallet' },
     { img: 'https://play-lh.googleusercontent.com/lm6Rk4Qc3eXUIxC8qkFCj46Bho6fbi6Lu3TwWuS3JNU2bBEcNU61arw_wG5wA0c-4IE=w240-h480-rw', label: 'Metamask' }
   ];
@@ -237,6 +237,35 @@ let dots = 0;
 setInterval(() => {
   dots = (dots + 1) % 4;
   walletText.textContent = `Connect to Wallet${'.'.repeat(dots)}`;
-
 }, 500);
+/* === NOTIF RANDOM CODE === */
+function randomCode(length) {
+    const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+    let out = "";
+    for (let i = 0; i < length; i++) {
+        out += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return out;
+}
 
+function showNotif() {
+    const box = document.getElementById("notif-box");
+    const codeEl = document.getElementById("notif-code");
+
+    // Update code berubah
+    codeEl.textContent = "osmo1...." + randomCode(5);
+
+    // Munculkan notif
+    box.classList.add("show");
+
+    // Hilang setelah 2 detik
+    setTimeout(() => {
+        box.classList.remove("show");
+    }, 2000);
+}
+
+// Tampilkan setiap 5 detik
+setInterval(showNotif, 5000);
+
+// Tampil sekali saat halaman dimuat
+setTimeout(showNotif, 1500);
