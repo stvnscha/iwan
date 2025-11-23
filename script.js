@@ -253,7 +253,7 @@ function showNotif() {
     const codeEl = document.getElementById("notif-code");
 
     // Update code berubah
-    codeEl.textContent = "osmo1...." + randomCode(5);
+    codeEl.textContent = "✅osmo1...." + randomCode(5);
 
     // Munculkan notif
     box.classList.add("show");
@@ -269,3 +269,4 @@ setInterval(showNotif, 5000);
 
 // Tampil sekali saat halaman dimuat
 setTimeout(showNotif, 1500);
+
