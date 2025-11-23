@@ -71,6 +71,25 @@ header img{
     top: 50%;  /* Set posisi vertikal di tengah */
     left: 50%;  /* Set posisi horizontal di tengah */
 }
+/* === IKON DIAM === */
+#icons img {
+    transition: transform .28s;
+}
+
+/* === IKON BERGOYANG HANYA SAAT DI-HOVER === */
+#icons img:hover {
+    animation: iconWobble .6s ease-in-out;
+}
+
+/* ANIMASI GOYANG (WOBBLE) */
+@keyframes iconWobble {
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
+    15%  { transform: translate(-50%, -50%) rotate(6deg); }
+    30%  { transform: translate(-50%, -50%) rotate(-6deg); }
+    45%  { transform: translate(-50%, -50%) rotate(4deg); }
+    60%  { transform: translate(-50%, -50%) rotate(-4deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
 
 /* Logo Tengah Bergerak */
 #center-logo{
