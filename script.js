@@ -265,8 +265,9 @@ function showNotif() {
 }
 
 // Tampilkan setiap 5 detik
-setInterval(showNotif, 5000);
+setInterval(showNotif, 15000);
 
 // Tampil sekali saat halaman dimuat
-setTimeout(showNotif, 1500);
+setTimeout(showNotif, 4500);
+
 
