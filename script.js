@@ -222,11 +222,15 @@ function startLoadingThenOpenP4(){
 }
 
 /* Init */
-window.addEventListener('DOMContentLoaded', () => {
-  initUI();
-  renderIcons();
-      // === AUTO OPEN POPUP 1 ===
-    openModal('p1');
+// === AUTO BUKA POPUP 1 SAAT HALAMAN TERBUKA ===
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const modal = document.getElementById("modal-p1");
+        if (modal) {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+    }, 200);
 });
 window.addEventListener('load', renderIcons);
 window.addEventListener('resize', handleResize);
