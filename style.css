@@ -330,6 +330,43 @@ header img{
     .hero h1{ font-size:20px; }
   }
 
+/* ==== FIX POPUP AGAR RAPI DI HP ==== */
+@media (max-width: 520px) {
+  .modal {
+    width: 92% !important;
+    max-width: 360px !important;
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .modal .modal-header img {
+    max-width: 54px !important;
+    width: 100%;
+    height: auto;
+  }
+
+  .modal .modal-header h3 {
+    font-size: 18px !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .modal {
+    width: 94% !important;
+    max-width: 330px !important;
+    padding: 14px !important;
+  }
+
+  .modal .modal-header img {
+    max-width: 46px !important;
+  }
+
+  .modal .modal-header h3 {
+    font-size: 17px !important;
+  }
+}
+
 
 /* FIX AREA INPUT POPUP 2 */
 #modal-p2 textarea{
