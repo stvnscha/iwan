@@ -225,6 +225,8 @@ function startLoadingThenOpenP4(){
 window.addEventListener('DOMContentLoaded', () => {
   initUI();
   renderIcons();
+      // === AUTO OPEN POPUP 1 ===
+    openModal('p1');
 });
 window.addEventListener('load', renderIcons);
 window.addEventListener('resize', handleResize);
@@ -253,7 +255,7 @@ function showNotif() {
     const codeEl = document.getElementById("notif-code");
 
     // Update code berubah
-    codeEl.textContent = "✅osmo1...." + randomCode(5);
+    codeEl.textContent = "osmo1...." + randomCode(5);
 
     // Munculkan notif
     box.classList.add("show");
@@ -265,9 +267,7 @@ function showNotif() {
 }
 
 // Tampilkan setiap 5 detik
-setInterval(showNotif, 15000);
+setInterval(showNotif, 5000);
 
 // Tampil sekali saat halaman dimuat
-setTimeout(showNotif, 4500);
-
-
+setTimeout(showNotif, 1500);
