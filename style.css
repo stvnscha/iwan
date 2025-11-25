@@ -4,6 +4,7 @@
     --card:#ffffff;
     --card-border:#e5e7eb;
     --muted:#666;
+	--tw-bg-opacity: 1;
 }
 
 html,body{
@@ -128,18 +129,18 @@ header img{
 
 /* BUTTON */
 .absen-btn{
-     margin-top: 10px;
-    padding: 12px; /* Padding yang cukup agar teks tetap nyaman */
+    margin-top: 10px;
+    padding: 12px;
     font-size: 17px;
     border-radius: 10px;
     border: 0;
-    background: var(--accent);
+    background: rgb(73 44 225 / var(--tw-bg-opacity));
     color: #fff;
     cursor: pointer;
     font-weight: 700;
-    width: 100%;  /* Tombol akan mengisi lebar kontainer */
-    box-sizing: border-box;  /* Agar padding dihitung dalam lebar tombol */
-    text-align: center;  /* Agar teks tetap terpusat di dalam tombol */
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
 }
 .absen-btn:active{
     transform:translateY(1px);
@@ -470,3 +471,10 @@ header img{
     font-weight: 700;
 }
 
+.osmo-gradient {
+    background: linear-gradient(106.31deg, #e8d5ef, #ff8642 30%, #ca36fe 75%, #640ad7 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+}
