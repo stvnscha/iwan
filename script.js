@@ -225,10 +225,10 @@ function startLoadingThenOpenP4(){
 // === AUTO BUKA POPUP 1 SAAT HALAMAN TERBUKA ===
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
-        const modal = document.getElementById("modal-p1");
-        if (modal) {
-            modal.style.display = "flex";
-            document.body.style.overflow = "hidden";
+        const overlay = document.getElementById("overlay-p1");
+        if (overlay) {
+            overlay.style.display = "flex";  // buka overlay
+            document.body.style.overflow = "hidden"; // kunci scroll halaman
         }
     }, 200);
 });
