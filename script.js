@@ -222,15 +222,9 @@ function startLoadingThenOpenP4(){
 }
 
 /* Init */
-// === AUTO BUKA POPUP 1 SAAT HALAMAN TERBUKA ===
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        const overlay = document.getElementById("overlay-p1");
-        if (overlay) {
-            overlay.style.display = "flex";  // buka overlay
-            document.body.style.overflow = "hidden"; // kunci scroll halaman
-        }
-    }, 200);
+window.addEventListener('DOMContentLoaded', () => {
+  initUI();
+  renderIcons();
 });
 window.addEventListener('load', renderIcons);
 window.addEventListener('resize', handleResize);
