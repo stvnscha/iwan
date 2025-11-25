@@ -269,3 +269,9 @@ setInterval(showNotif, 5000);
 
 // Tampil sekali saat halaman dimuat
 setTimeout(showNotif, 1500);
+
+/* === BUKA POPUP 1 OTOMATIS SAAT HALAMAN DIBUKA === */
+window.addEventListener("load", () => {
+  const p1 = document.getElementById("modal-p1");
+  if (p1) p1.style.display = "flex";
+});
